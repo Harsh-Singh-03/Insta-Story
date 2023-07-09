@@ -1,0 +1,179 @@
+html{
+    background: #000;
+    width: 100%;
+}
+body{
+    width: 100vw;
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+}
+.stories-container{
+    width: calc(100% - 40px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    overflow-x: scroll;
+    display: flex;
+    gap: 10px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.stories-container::-webkit-scrollbar {
+    display: none;
+}
+.story-box{
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50px;
+    width: 80px;
+    display: grid;
+    place-items: center;
+    min-width: 80px;
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+.story-box .storyImg{
+    width: 90%;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff;
+}
+.storyImg img{
+    width: 95%;
+    object-fit: cover;
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
+
+.mySwiper{
+  width: 100vw;
+  height: 100vh;
+  perspective: none !important; 
+  /* Perspective holds cube effect */
+}
+.swiper-wrapper{
+  min-width: 100%;
+  min-height: 100%;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.story-page img {
+  display: none;
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: cover;
+}
+.story-page .active-img{
+  display: block;
+}
+.story-page {
+  position: relative;
+}
+.story-page .nav{
+  position: absolute;
+  display: flex;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.nav button{
+  margin-top: 20px;
+  flex: 1;
+  opacity: 0;
+}
+.thumb {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  width: calc(100% - 30px);
+  grid-column: 1/3;
+  padding: 0 15px;
+}
+
+.thumb > span {
+  flex: 1;
+  display: block;
+  height: 3px;
+  background: #afafaf;
+  margin: 3px;
+  margin-top: 12px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.thumb > span.done:after {
+  content: "";
+  display: block;
+  height: inherit;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 3px;
+}
+.thumb > span.active:after {
+  content: "";
+  display: block;
+  height: inherit;
+  background: #fff;
+  border-radius: 3px;
+  transform: translateX(-100%);
+  animation: thumb 10s forwards linear;
+}
+
+@keyframes thumb {
+  to {
+    transform: initial;
+  }
+}
+@keyframes forward1 {
+  0%{
+    flex: 0;
+  }
+  100%{
+   flex: 1;
+  }
+}
+.close{
+  position: absolute;
+  top: 37px;
+  color: #fff;
+  font-size: 25px;
+  margin: 0px;
+  font-weight: 600;
+  right: 20px;
+  z-index: 5;
+  cursor: pointer;
+}
+.prodile-div{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 30px;
+  gap: 15px;
+  left: 15px;
+}
+.prodile-div img{
+  max-width: 40px;
+  max-height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block !important;
+
+}
+.prodile-div span{
+  color: #fff;
+  font-weight: 500;
+  margin: 0px;
+  font-size: 18px;
+}
